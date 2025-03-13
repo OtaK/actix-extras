@@ -48,12 +48,14 @@ pub struct AggregatedMessageStream {
 }
 
 impl AggregatedMessageStream {
+    pub(crate) const DEFAULT_MAX_SIZE: usize = 1024 * 1024; // 1MiB
+
     #[must_use]
     pub(crate) fn new(stream: MessageStream) -> Self {
         AggregatedMessageStream {
             stream,
             current_size: 0,
-            max_size: 1024 * 1024,
+            max_size: Self::DEFAULT_MAX_SIZE,
             continuations: Vec::new(),
             continuation_kind: ContinuationKind::Binary,
         }

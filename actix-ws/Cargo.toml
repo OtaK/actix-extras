@@ -19,14 +19,14 @@ actix-codec = "0.5"
 actix-http = { version = "3", default-features = false, features = ["ws"] }
 actix-web = { version = "4", default-features = false }
 bytestring = "1"
-futures-core = "0.3.17"
-tokio = { version = "1.24", features = ["sync"] }
+futures-core = "0.3"
+tokio = { version = "1.44", default-features = false, features = ["sync"] }
 
 [dev-dependencies]
-actix-web = "4.8"
-futures-util = { version = "0.3.17", default-features = false, features = ["std"] }
-tokio = { version = "1.24", features = ["sync", "rt", "macros"] }
-tracing = "0.1.30"
+actix-web = "4.10"
+futures-util = { version = "0.3.31", default-features = false, features = ["std"] }
+tokio = { version = "1.44", features = ["sync", "rt", "macros"] }
+tracing = "0.1.41"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 [lints]
